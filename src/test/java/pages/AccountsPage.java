@@ -33,13 +33,13 @@ public class AccountsPage extends BasePage {
     }
 
     @Step("Filling new user data")
-    public void fillIn(Integer typeDrop, String accountName, String phone, String fax, String website,
+    public void fillIn(String accountName, String phone, String fax, String website,
                        String parentAcc, String employee, String annualRevenue,
                        String billCity, String billState, String billZip, String billCountry,
                        String shipCity, String shipState, String shipZip, String shipCountry,
                        String description, String billStreet, String shipStreet,
-                        Integer industry) {
-        new DropDown(driver, "Type").getDrop(typeDrop);
+                        String type, String industry) {
+
         new Input(driver, "Account Name").write(accountName);
         new Input(driver, "Phone").write(phone);
         new Input(driver, "Fax").write(fax);
@@ -59,6 +59,7 @@ public class AccountsPage extends BasePage {
         new TextArea(driver, "Billing Street").write(billStreet);
         new TextArea(driver, "Shipping Street").write(shipStreet);
 
+        new DropDown(driver, "Type").getDrop(type);
         new DropDown(driver, "Industry").getDrop(industry);
     }
 

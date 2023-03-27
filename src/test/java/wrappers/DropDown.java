@@ -11,20 +11,17 @@ import java.util.List;
 public class DropDown {
     String label;
     WebDriver driver;
-    List<WebElement> dDown;
     String baseLocator = "//*[text()='%s']/ancestor::div[contains(@class, 'uiInput')]//a";
+
     public DropDown(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }
-    public void getDrop(int index) {
-        if (dDown != null) {
-            dDown.clear();
-        }
+
+    public void getDrop(String choise) {
         driver.findElement(By.xpath(String.format(baseLocator, label))).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        dDown = driver.findElements(By.cssSelector("li.uiMenuItem"));
-        dDown.get(index).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.findElement(By.xpath("//*[text()='" + choise + "']")).click();
     }
 
 }
