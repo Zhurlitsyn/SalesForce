@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(description = "Try login user")
     public void login() {
         loginPage.open();
-        loginPage.login("6131755-6d9t@force.com", "purple47");
+        loginPage.login(USERNAME, PASSWORD);
         loginPage.waitForPageLoaded();
         driver.findElement(By.cssSelector("[title=User]")).isDisplayed();
     }

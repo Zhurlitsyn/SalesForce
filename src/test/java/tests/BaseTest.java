@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,9 +16,10 @@ public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     AccountsPage accountsPage;
+    ContactsPage contactsPage;
 
-    public static final String USERNAME = "standard_user";
-    public static final String PASSWORD = "secret_sauce";
+    public static final String USERNAME = "6131755-6d9t@force.com";
+    public static final String PASSWORD = "purple47";
 
     public BaseTest() {
     }
@@ -48,6 +44,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
         accountsPage = new AccountsPage(driver);
+        contactsPage = new ContactsPage(driver);
 
     }
 

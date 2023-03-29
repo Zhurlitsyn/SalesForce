@@ -1,14 +1,12 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 
 public class AccountsTest extends BaseTest {
 
-    @Test
+    @Test(description = "Make new account test")
     public void newAccount() {
         loginPage.open();
         loginPage.login("6131755-6d9t@force.com", "purple47");
@@ -22,7 +20,7 @@ public class AccountsTest extends BaseTest {
                 "Very Nice Meet You", "Kolhoznaya str", "Navoznaya str",
                 "Клиент", "Химия");
         accountsPage.save();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        Assert.assertEquals("Mike Nike", accountsPage.findAccountName(), "Doesn't match");
+        String messageAlert = accountsPage.getMessage();
+        Assert.assertEquals(messageAlert, "Account \"Mike Nike\" was created.", "Doesn't match");
     }
 }

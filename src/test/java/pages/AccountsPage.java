@@ -3,15 +3,12 @@ package pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import wrappers.DropDown;
 import wrappers.Input;
 import wrappers.TextArea;
 
-import java.util.List;
-
 public class AccountsPage extends BasePage {
-    public static final By checkNewAccount = By.xpath("//lightning-formatted-text[@class='custom-truncate']");
+    public static final By alertMessageText = By.className("toastMessage");
 
     public AccountsPage(WebDriver driver) {
         super(driver);
@@ -26,10 +23,9 @@ public class AccountsPage extends BasePage {
         driver.findElement(By.cssSelector("[title=New]")).click();
     }
 
-    @Step("Find new account name")
-    public String findAccountName() {
-        List<WebElement> accountList = driver.findElements(checkNewAccount);
-        return accountList.get(accountList.size() - 1).getText();
+    @Step("Check text alert Message")
+    public String getMessage() {
+        return driver.findElement(alertMessageText).getText();
     }
 
     @Step("Filling new user data")
@@ -59,10 +55,11 @@ public class AccountsPage extends BasePage {
         new TextArea(driver, "Billing Street").write(billStreet);
         new TextArea(driver, "Shipping Street").write(shipStreet);
 
-        new DropDown(driver, "Type").getDrop(type);
-        new DropDown(driver, "Industry").getDrop(industry);
+        new DropDown(driver, "Type").getDrop("a", type);
+        new DropDown(driver, "Industry").getDrop("a", industry);
     }
 
+    @Step("Click Save button")
     public void save() {
         driver.findElement(By.cssSelector("[title=Save]")).click();
     }
