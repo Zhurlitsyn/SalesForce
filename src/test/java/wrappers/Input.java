@@ -2,6 +2,7 @@ package wrappers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.SleepSomeTime;
 
 public class Input {
     String label;
@@ -13,9 +14,13 @@ public class Input {
         this.label = label;
     }
     public void write(String text) {
-      driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
+
+        driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
+        SleepSomeTime.delay(500);
     }
     public void writeDay(String text) {
-      driver.findElement(By.xpath(String.format(dayLocator, label))).sendKeys(text);
+
+        driver.findElement(By.xpath(String.format(dayLocator, label))).sendKeys(text);
+        SleepSomeTime.delay(500);
     }
 }

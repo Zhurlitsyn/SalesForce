@@ -2,6 +2,7 @@ package wrappers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.SleepSomeTime;
 
 import java.time.Duration;
 
@@ -19,8 +20,9 @@ public class DropDown {
 
     public void getDrop(String locator, String choise) {
         driver.findElement(By.xpath(String.format((baseLocator + locator), label))).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        SleepSomeTime.delay(500);
         driver.findElement(By.xpath("//*[text()='" + choise + "']")).click();
+        SleepSomeTime.delay(500);
     }
 
 }

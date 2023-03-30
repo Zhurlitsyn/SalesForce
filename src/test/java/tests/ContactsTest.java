@@ -18,6 +18,7 @@ public class ContactsTest extends BaseTest {
         loginPage.waitForPageLoaded();
         contactsPage.open();
         contactsPage.clickNew();
+        contactsPage.waitForModalLoaded();
         contactsPage.fillInAddress("Mailing", "Mountain str", "456789",
                 "Madrid", "Madrid", "Spain");
         contactsPage.fillInAddress("Other", "Mountain str", "456789",
@@ -26,7 +27,8 @@ public class ContactsTest extends BaseTest {
                 "+123 4465 897", "Sapiens Home", "Science", "12.04.1917",
                 "In-Store", "Lorem ipsum dolor asmet ahmet");
         contactsPage.fillInContact("Simple", "+5898754123", "+65896523",
-                "Dimmple", "some@one.com", "Проф.", "Mike Nike");
+                "Dimmple", "some@one.com", "Major Chef","Проф.",
+                "Mike Nike", "Accounts", "ForReportsTo", "Contacts");
 
         contactsPage.save();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
