@@ -16,11 +16,11 @@ public class Input {
     public void write(String text) {
 
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
-        SleepSomeTime.delay(500);
+        SleepSomeTime.delay(100);
     }
     public void writeDay(String text) {
 
         driver.findElement(By.xpath(String.format(dayLocator, label))).sendKeys(text);
-        SleepSomeTime.delay(500);
+        SleepSomeTime.delay(100);
     }
 }

@@ -3,7 +3,6 @@ package pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import wrappers.DropDown;
@@ -17,7 +16,6 @@ import java.util.List;
 public class ContactsPage extends BasePage {
 
     public static final By alertMessageText = By.className("toastMessage");
-
 
     public ContactsPage(WebDriver driver) {
         super(driver);
@@ -95,7 +93,6 @@ public class ContactsPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='New Contact']")));
 
     }
-
 
     @Step("Click Save button")
     public void save() {
