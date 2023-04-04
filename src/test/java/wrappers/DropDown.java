@@ -7,7 +7,7 @@ import utils.SleepSomeTime;
 public class DropDown {
     String label;
     WebDriver driver;
-    String baseLocator = "//*[text()='%s']/..//";
+    String baseLocator = "//*[text()='%s']/../..//";
 
     public DropDown(WebDriver driver, String label) {
         this.driver = driver;

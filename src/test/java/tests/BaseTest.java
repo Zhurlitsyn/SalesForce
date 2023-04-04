@@ -1,7 +1,6 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,8 +15,10 @@ import java.time.Duration;
 public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
-    AccountsPage accountsPage;
+    AccountsListPage accountsListPage;
     ContactsPage contactsPage;
+    NewAccountPage newAccountPage;
+    AccountsDetailPage accountsDetailPage;
 
     public static final String USERNAME = "6131755-6d9t@force.com";
     public static final String PASSWORD = "purple47";
@@ -44,8 +45,11 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
-        accountsPage = new AccountsPage(driver);
+        accountsListPage = new AccountsListPage(driver);
         contactsPage = new ContactsPage(driver);
+        newAccountPage = new NewAccountPage(driver);
+        accountsDetailPage = new AccountsDetailPage(driver);
+
 
     }
 

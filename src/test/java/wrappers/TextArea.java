@@ -7,7 +7,7 @@ import utils.SleepSomeTime;
 public class TextArea {
     String label;
     WebDriver driver;
-    String baseLocator = "//*[text()='%s']/..//textarea";
+    String baseLocator = "//*[text()='%s']/../..//textarea";
     public TextArea(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
