@@ -2,6 +2,7 @@ package pages;
 
 import dto.Account;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +11,7 @@ import wrappers.DropDown;
 import wrappers.Input;
 import wrappers.TextArea;
 
+@Log4j2
 public class NewAccountPage extends BasePage {
     public static final By alertMessageText = By.className("toastMessage");
 
@@ -28,17 +30,17 @@ public class NewAccountPage extends BasePage {
         return this;
     }
 
-    @Step("Click New button")
+    /*@Step("Click New button")
     public NewAccountPage clickNew() {
         driver.findElement(By.cssSelector("[title=New]")).click();
         NewAccountPage newAccountPage = new NewAccountPage(driver);
         newAccountPage.isPageOpened();
         return this;
-    }
+    }*/
 
-    @Step("Filling new user data")
+    @Step("Filling new Account data")
     public NewAccountPage fillIn(Account account) {
-
+        log.info("Filling new Account data {}", account);
         new Input(driver, "Account Name").write(account.getAccountName());
         new Input(driver, "Phone").write(account.getPhone());
         new Input(driver, "Fax").write(account.getFax());

@@ -21,10 +21,18 @@ public class AccountsListPage extends BasePage {
         return this;
     }
 
-    @Step("Click New button")
+   /* @Step("Click New button")
     public AccountsListPage clickNew() {
         driver.findElement(By.cssSelector("[title=New]")).click();
         return this;
+    }*/
+
+    @Step("Click New button")
+    public NewAccountPage clickNew() {
+        driver.findElement(By.cssSelector("[title=New]")).click();
+        NewAccountPage newAccountPage = new NewAccountPage(driver);
+        newAccountPage.isPageOpened();
+        return newAccountPage;
     }
 
 

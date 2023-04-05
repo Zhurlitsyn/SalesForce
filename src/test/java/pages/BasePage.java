@@ -10,11 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 abstract class BasePage {
-    //public static final By TITLE = By.cssSelector(".title");
+
     WebDriver driver;
     WebDriverWait wait;
     public static final String BASE_URL = "https://login.salesforce.com";
 
+    //public static final By TITLE = By.cssSelector(".title");
     /*public String getTitle() {
         return driver.findElement(TITLE).getText();
     }*/
@@ -37,7 +38,6 @@ abstract class BasePage {
             }
         };
     }
-
 
 
 }

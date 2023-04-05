@@ -1,9 +1,10 @@
 package wrappers;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.SleepSomeTime;
-
+@Log4j2
 public class Input {
     String label;
     WebDriver driver;
@@ -15,18 +16,18 @@ public class Input {
         this.label = label;
     }
     public void write(String text) {
-
+        log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
         SleepSomeTime.delay(100);
     }
 
     public void writeAddress(String text) {
-
+        log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(addressLocator, label))).sendKeys(text);
         SleepSomeTime.delay(100);
     }
     public void writeDay(String text) {
-
+        log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(dayLocator, label))).sendKeys(text);
         SleepSomeTime.delay(100);
     }

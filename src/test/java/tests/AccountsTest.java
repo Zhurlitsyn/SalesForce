@@ -14,7 +14,7 @@ public class AccountsTest extends BaseTest {
         loginPage.open()
                 .login(USERNAME, PASSWORD);
         accountsListPage.open()
-                        .isPageOpened();
+                .isPageOpened();
         accountsListPage.clickNew();
 
         Account account = new Account("Mike Nike", "+487589654", "+48568755",
@@ -24,13 +24,19 @@ public class AccountsTest extends BaseTest {
                 "Very Nice Meet You", "Kolhoznaya str", "Navoznaya str",
                 "Клиент", "Химия");
 
+        Account account2 = Account.builder()
+                .accountName("Nananajjh")
+                .build();
+
         newAccountPage.isPageOpened()
-                    .fillIn(account)
-                    .save();
+                .fillIn(account)
+                .save();
         accountsDetailPage.isPageOpened();
         String newAccountNameCheck = accountsDetailPage.getNewAccountName();
+        Assert.assertEquals(newAccountNameCheck, "Mike Nike", "Doesn't match");
+
+        //-----variant checking by alert message----
         //String messageAlert = newAccountPage.getMessage();
         //Assert.assertEquals(messageAlert, "Account \"Mike Nike\" was created.", "Doesn't match");
-        Assert.assertEquals(newAccountNameCheck, "Mike Nike", "Doesn't match");
     }
 }
