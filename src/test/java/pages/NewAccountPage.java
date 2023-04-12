@@ -45,7 +45,7 @@ public class NewAccountPage extends BasePage {
         new Input(driver, "Phone").write(account.getPhone());
         new Input(driver, "Fax").write(account.getFax());
         new Input(driver, "Website").write(account.getWebsite());
-        new Input(driver, "Parent Account").write(account.getParentAcc());
+        //new Input(driver, "Parent Account").write(account.getParentAcc());
         new Input(driver, "Employees").write(account.getEmployee());
         new Input(driver, "Annual Revenue").write(account.getAnnualRevenue());
         new Input(driver, "Billing City").writeAddress(account.getBillCity());
@@ -67,6 +67,7 @@ public class NewAccountPage extends BasePage {
 
     @Step("Click Save button")
     public void save() {
+        log.info("Clicking Save button");
         driver.findElement(By.cssSelector("[title=Save]")).click();
         SleepSomeTime.delay(200);
 

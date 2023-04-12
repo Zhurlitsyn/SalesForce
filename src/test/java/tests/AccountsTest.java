@@ -1,11 +1,9 @@
 package tests;
 
 import dto.Account;
+import dto.AccountFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.NewAccountPage;
-import utils.SleepSomeTime;
-
 
 public class AccountsTest extends BaseTest {
 
@@ -17,23 +15,21 @@ public class AccountsTest extends BaseTest {
                 .isPageOpened();
         accountsListPage.clickNew();
 
-        Account account = new Account("Mike Nike", "+487589654", "+48568755",
-                "4t.by", "New parent account", "12", "$5647",
+        /*Account account = new Account("Mike Nike", "+487589654", "+4856875578",
+                "12", "4t.by", "$5647",
                 "Minsk", "Minsk", "220022", "Barbados", "Drychyn",
                 "Pychyn", "154874", "Gonduras",
                 "Very Nice Meet You", "Kolhoznaya str", "Navoznaya str",
-                "Клиент", "Химия");
+                "Клиент", "Химия");*/
 
-        Account account2 = Account.builder()
-                .accountName("Nananajjh")
-                .build();
+        Account account = new AccountFactory().getRandom();
 
         newAccountPage.isPageOpened()
                 .fillIn(account)
                 .save();
         accountsDetailPage.isPageOpened();
         String newAccountNameCheck = accountsDetailPage.getNewAccountName();
-        Assert.assertEquals(newAccountNameCheck, "Mike Nike", "Doesn't match");
+        Assert.assertEquals(newAccountNameCheck, account.getAccountName(), "Doesn't match");
 
         //-----variant checking by alert message----
         //String messageAlert = newAccountPage.getMessage();

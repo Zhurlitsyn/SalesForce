@@ -16,7 +16,7 @@ public class Account {
     String phone;
     String employee;
     String website;
-    String parentAcc;
+    //String parentAcc;
     String annualRevenue;
     String billCity;
     String billState;
