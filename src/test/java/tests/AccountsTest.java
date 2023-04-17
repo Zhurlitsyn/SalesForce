@@ -13,7 +13,7 @@ public class AccountsTest extends BaseTest {
                 .login();
         accountsListPage.open();
 
-        accountsListPage.clickNew();
+        //accountsListPage.clickNew();
 
         Account account = new AccountFactory().getRandom();
 

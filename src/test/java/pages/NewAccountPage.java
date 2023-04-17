@@ -27,6 +27,7 @@ public class NewAccountPage extends BasePage {
 
     public NewAccountPage open() {
         driver.get("https://myfirstprimeorg-dev-ed.develop.lightning.force.com/lightning/o/Account/new");
+        waitForPageLoaded();
         return this;
     }
 
