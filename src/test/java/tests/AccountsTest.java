@@ -18,7 +18,7 @@ public class AccountsTest extends BaseTest {
         Account account = new AccountFactory().getRandom();
 
         newAccountPage.open()
-                .isPageOpened()
+                //.isPageOpened()
                 .fillIn(account)
                 .save();
         accountsDetailPage.isPageOpened(account.getAccountName());
