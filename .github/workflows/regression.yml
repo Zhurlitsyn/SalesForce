@@ -28,4 +28,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean -Dtest=LoginTest -Dtest=AccountsTest
+      run: mvn clean test -Dtest=LoginTest -Dtest=AccountsTest
