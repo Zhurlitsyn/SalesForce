@@ -13,9 +13,9 @@ public class ContactsTest extends BaseTest {
 
     @Test(description = "Make new contact test")
     public void newAccount() {
-        loginPage.open();
-        loginPage.login("6131755-6d9t@force.com", "purple47");
-        loginPage.waitForPageLoaded();
+        loginPage.open()
+                 .login()
+                 .waitForPageLoaded();
         contactsPage.open();
         contactsPage.clickNew();
         contactsPage.waitForModalLoaded();

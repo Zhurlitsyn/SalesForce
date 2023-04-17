@@ -4,6 +4,9 @@
 # iml file
 *.iml
 
+#properties
+*.properties
+
 # out folder
 /.out
 

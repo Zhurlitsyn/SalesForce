@@ -15,21 +15,21 @@ public class AccountsDetailPage extends BasePage {
         super(driver);
     }
 
-    public AccountsDetailPage isPageOpened() {
+    public AccountsDetailPage isPageOpened( String name) {
         log.info("Trying to open Detail Page");
         wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[contains(@class, 'entityNameTitle') and text()='Account']")));
+                By.xpath("//div[@class='tabBar slds-grid']//span[text()='"+ name +"']")));
         return this;
     }
 
     @Step("Get Account Name")
-    public String getNewAccountName() {
+    public String getNewAccountName(String name) {
         log.info("Getting new Account Name");
         /*List<WebElement> listAccountNames = driver.findElements(By
                 .xpath("//h1/div[text()='Account'] /..//lightning-formatted-text"));
         return listAccountNames.get((listAccountNames.size() - 1)).getText();*/
         return driver.findElement(By
-                .xpath("//h1/div[text()='Account'] /..//lightning-formatted-text")).getText();
+                .xpath("//lightning-formatted-text[text()='" + name + "']")).getText();
     }
 
 }

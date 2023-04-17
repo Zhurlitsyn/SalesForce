@@ -46,7 +46,7 @@ public class ContactsPage extends BasePage {
 
         new Input(driver, "Mobile").write(mobile);
 
-        new DropDown(driver, "Salutation").getDrop("button", salutation);
+        new DropDown(driver, "Salutation").getDrop(salutation);
 
         new Input(driver, "Last Name").write(lastName);
 
@@ -82,7 +82,7 @@ public class ContactsPage extends BasePage {
         new Input(driver, "Assistant").write(assistant);
         new Input(driver, "Department").write(dept);
         new Input(driver, "Birthdate").writeDay(birthday);
-        new DropDown(driver, "Lead Source").getDrop("button", leadSource);
+        new DropDown(driver, "Lead Source").getDrop(leadSource);
         new TextArea(driver, "Description").write(description);
 
     }

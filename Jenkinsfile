@@ -13,9 +13,7 @@ pipeline {
         stage('GIT Clone') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: "main", url: 'https://github.com/Zhurlitsyn/SauceDemo.git'
-
-
+                git branch: "main", url: 'https://github.com/Zhurlitsyn/SalesForce.git'
             }
         }
         stage('UI Test') {
@@ -40,12 +38,10 @@ pipeline {
             }
         }
         stage('Run test') {
-         steps {
+            steps {
             // Get some code from a GitHub repository
-            git branch: "${params.BRANCH}", url: 'https://github.com/Zhurlitsyn/SauceDemo.git'
-         }
+                git branch: "${params.BRANCH}", url: 'https://github.com/Zhurlitsyn/SalesForce.git'
+            }
         }
-
     }
-
 }

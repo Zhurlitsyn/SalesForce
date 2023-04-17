@@ -19,9 +19,7 @@ public class BaseTest {
     ContactsPage contactsPage;
     NewAccountPage newAccountPage;
     AccountsDetailPage accountsDetailPage;
-
-    public static final String USERNAME = "6131755-6d9t@force.com";
-    public static final String PASSWORD = "purple47";
+    MainPage mainPage;
 
     public BaseTest() {
     }
@@ -45,6 +43,7 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
+        mainPage = new MainPage(driver);
         accountsListPage = new AccountsListPage(driver);
         contactsPage = new ContactsPage(driver);
         newAccountPage = new NewAccountPage(driver);

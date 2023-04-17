@@ -13,7 +13,7 @@ abstract class BasePage {
 
     WebDriver driver;
     WebDriverWait wait;
-    public static final String BASE_URL = "https://login.salesforce.com";
+    public static final String BASE_URL = "https://myfirstprimeorg-dev-ed.develop.lightning.force.com/";
 
     //public static final By TITLE = By.cssSelector(".title");
     /*public String getTitle() {
