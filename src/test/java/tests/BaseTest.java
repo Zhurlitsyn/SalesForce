@@ -34,8 +34,8 @@ public class BaseTest {
             options.addArguments(new String[]{"--headless"});
             options.addArguments(new String[]{"--start-maximized"});
 
-            options.addArguments(new String[]{"disable-infobars"}); // disabling infobars
-            options.addArguments(new String[]{"--disable-extensions"}); // disabling extensions
+            options.addArguments(new String[]{"disable-infobars"}); //disabling infobars
+            options.addArguments(new String[]{"--disable-extensions"}); //disabling extensions
             options.addArguments(new String[]{"--disable-gpu"}); // applicable to windows os only
             options.addArguments(new String[]{"--disable-dev-shm-usage"}); // overcome limited resource problems
             options.addArguments(new String[]{"--no-sandbox"}); // Bypass OS security model
