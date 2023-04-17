@@ -21,6 +21,7 @@ public class AccountsListPage extends BasePage {
     public AccountsListPage open() {
         log.info("Opening Acc List Page");
         driver.get("https://myfirstprimeorg-dev-ed.develop.lightning.force.com/lightning/o/Account/list");
+        waitForPageLoaded();
         return this;
     }
 

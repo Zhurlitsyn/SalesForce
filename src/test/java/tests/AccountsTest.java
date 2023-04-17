@@ -11,8 +11,8 @@ public class AccountsTest extends BaseTest {
     public void newAccount() {
         loginPage.open()
                 .login();
-        accountsListPage.open()
-                .isPageOpened();
+        accountsListPage.open();
+
         accountsListPage.clickNew();
 
         Account account = new AccountFactory().getRandom();

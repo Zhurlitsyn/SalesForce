@@ -31,7 +31,7 @@ public class BaseTest {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments(new String[]{"--remote-allow-origins=*"});
-            options.addArguments(new String[]{"--headless"});
+            //options.addArguments(new String[]{"--headless"});
             options.addArguments(new String[]{"--start-maximized"});
 
             options.addArguments(new String[]{"disable-infobars"}); //disabling infobars
