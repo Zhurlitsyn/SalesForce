@@ -16,6 +16,6 @@ public class TextArea {
     public void write(String text) {
         log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
-        SleepSomeTime.delay(200);
+        SleepSomeTime.delay(300);
     }
 }

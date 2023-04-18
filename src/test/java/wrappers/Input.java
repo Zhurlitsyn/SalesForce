@@ -18,17 +18,17 @@ public class Input {
     public void write(String text) {
         log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
-        SleepSomeTime.delay(200);
+        SleepSomeTime.delay(300);
     }
 
     public void writeAddress(String text) {
         log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
-        SleepSomeTime.delay(200);
+        SleepSomeTime.delay(300);
     }
     public void writeDay(String text) {
         log.info("Writing {} into {}", text, label);
         driver.findElement(By.xpath(String.format(dayLocator, label))).sendKeys(text);
-        SleepSomeTime.delay(200);
+        SleepSomeTime.delay(300);
     }
 }

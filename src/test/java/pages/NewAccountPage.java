@@ -51,8 +51,8 @@ public class NewAccountPage extends BasePage {
         new Input(driver, "Phone").write(account.getPhone());
         new Input(driver, "Fax").write(account.getFax());
         new Input(driver, "Website").write(account.getWebsite());
-        new Input(driver, "Ticker Symbol").write(account.getWebsite());
-        new Input(driver, "SIC Code").write(account.getWebsite());
+        new Input(driver, "Ticker Symbol").write(account.getTicketSymbol());
+        new Input(driver, "SIC Code").write(account.getSicCode());
         new Input(driver, "Employees").write(account.getEmployees());
         new DropDown(driver, "Type").getDrop(account.getType());
         new DropDown(driver, "Industry").getDrop(account.getIndustry());

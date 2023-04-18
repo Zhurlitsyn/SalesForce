@@ -24,10 +24,10 @@ public class DropDown {
     public void getDrop(String choice) {
         log.info("Click button {}", label);
         driver.findElement(By.xpath(String.format(baseLocator, label))).click();
-        SleepSomeTime.delay(300);
+        SleepSomeTime.delay(500);
         log.info("Select on {}", choice , label);
         driver.findElement(By.xpath("//*[text()='" + choice + "']")).click();
-        SleepSomeTime.delay(300);
+        SleepSomeTime.delay(500);
     }
 
 }
