@@ -28,8 +28,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PASSWORD: ${{ secrets.PASSWORD }}
       run: mvn clean -Dtest=LoginTest,AccountsTest test
